@@ -1,5 +1,8 @@
 import {EventEmitter} from 'events';
 
+/**
+ * @public
+ */
 export class MyWidget extends EventEmitter {
   /**
    * Do some async work.
@@ -11,14 +14,17 @@ export class MyWidget extends EventEmitter {
   }
 }
 
+/**
+ * @public
+ */
 export interface MyWidget {
   /**
    *
    * The "start" event is when `run` has started. The "done" event is
    * emitted when `run` has finished.
    *
-   * @param eventName The name of the event - always `start` or `done`.
-   * @param listener The listener function to call when the event is emitted.
+   * @param eventName - The name of the event - always `start` or `done`.
+   * @param listener - The listener function to call when the event is emitted.
    */
   on(eventName: 'start' | 'done', listener: () => void): this;
 
